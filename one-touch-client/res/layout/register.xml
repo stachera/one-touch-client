@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    tools:context=".UsuarioBO">
+
+    <Button
+        android:id="@+id/btRegisterOK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btRegisterCancel"
+        android:layout_alignBottom="@+id/btRegisterCancel"
+        android:layout_alignRight="@+id/txtLogin"
+        android:text="@android:string/ok" />
+
+    <Button
+        android:id="@+id/btRegisterCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtConfirmarSenha"
+        android:layout_below="@+id/txtConfirmarSenha"
+        android:layout_marginTop="30dp"
+        android:text="@android:string/cancel" />
+
+    <EditText
+        android:id="@+id/txtLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
+        android:ems="10"
+        android:hint="@string/input_login"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/txtConfirmarSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtLogin"
+        android:layout_below="@+id/txtLogin"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:hint="@string/input_confirm_pwd"
+        android:inputType="textPassword" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/txtSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtConfirmarSenha"
+        android:layout_below="@+id/txtLogin"
+        android:layout_marginTop="33dp"
+        android:ems="10"
+        android:hint="@string/input_pwd"
+        android:inputType="textPassword" />
+
+</RelativeLayout>

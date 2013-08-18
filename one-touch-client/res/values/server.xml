@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<item name="server_url" type="string">http://192.168.0.11:8080/one-touch-server</item>
+<!-- 	<item name="server_url" type="string">http://192.168.43.26:8080/one-touch-server</item> -->
+</resources>

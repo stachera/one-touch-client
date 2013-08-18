@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="true"
+    android:orientation="horizontal"
+    tools:context=".ProvadorActivity" >
+    
+    <FrameLayout
+		android:id="@+id/editor"
+		android:layout_width="0dp"
+		android:layout_height="match_parent"
+		android:layout_weight="2"	>
+        
+	    <ImageView
+	        android:id="@+id/iv_photo"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:contentDescription="@string/select_image"
+	        android:src="@drawable/content_new_picture"
+	        />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/catalogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </ScrollView>
+    
+</LinearLayout>

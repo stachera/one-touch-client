@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="@string/input_login"
+    tools:context=".LoginBO" >
+
+    <EditText
+        android:id="@+id/txtLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="113dp"
+        android:ems="10"
+        android:hint="@string/input_login"
+        android:inputType="textEmailAddress" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/txtSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtLogin"
+        android:layout_below="@+id/txtLogin"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/input_pwd"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtSenha"
+        android:layout_below="@+id/txtSenha"
+        android:layout_marginTop="58dp"
+        android:text="@string/btRegister" />
+
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btRegister"
+        android:layout_alignBottom="@+id/btRegister"
+        android:layout_alignRight="@+id/txtSenha"
+        android:text="@string/bt_login" />
+
+</RelativeLayout>
