@@ -38,9 +38,9 @@ public final class ProvadorActivity_
     }
 
     private void afterSetContentView_() {
+        layoutEditor = ((FrameLayout) findViewById(id.editor));
         catalogo = ((LinearLayout) findViewById(id.catalogo));
         imgSelected = ((ImageView) findViewById(id.iv_photo));
-        layoutEditor = ((FrameLayout) findViewById(id.editor));
         {
             View view = findViewById(id.iv_photo);
             if (view!= null) {

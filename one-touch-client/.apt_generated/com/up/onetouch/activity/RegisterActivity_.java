@@ -34,9 +34,9 @@ public final class RegisterActivity_
     }
 
     private void afterSetContentView_() {
+        txtConfirmarSenha = ((EditText) findViewById(id.txtConfirmarSenha));
         txtLogin = ((EditText) findViewById(id.txtLogin));
         txtSenha = ((EditText) findViewById(id.txtSenha));
-        txtConfirmarSenha = ((EditText) findViewById(id.txtConfirmarSenha));
         {
             View view = findViewById(id.btRegisterOK);
             if (view!= null) {
