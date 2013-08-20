@@ -10,7 +10,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import com.up.onetouch.R.id;
 import com.up.onetouch.R.layout;
 import com.up.onetouch.rest.RestClient_;
 
@@ -31,6 +33,36 @@ public final class PanelActivity_
     }
 
     private void afterSetContentView_() {
+        {
+            View view = findViewById(id.btOpenProvador);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        PanelActivity_.this.onClickOpenProvador();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = findViewById(id.btClearPreferences);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        PanelActivity_.this.onClickClearPreferences();
+                    }
+
+                }
+                );
+            }
+        }
         afterViews();
     }
 

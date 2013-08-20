@@ -34,17 +34,17 @@ public class RestClient_
     }
 
     @Override
-    public LoginResponse login(LoginRequest request) {
-        HttpHeaders httpHeaders = new HttpHeaders();
-        HttpEntity<LoginRequest> requestEntity = new HttpEntity<LoginRequest>(request, httpHeaders);
-        return restTemplate.exchange(rootUrl.concat("/login/validate"), HttpMethod.POST, requestEntity, LoginResponse.class).getBody();
-    }
-
-    @Override
     public UsuarioResponse persist(Usuario usuario) {
         HttpHeaders httpHeaders = new HttpHeaders();
         HttpEntity<Usuario> requestEntity = new HttpEntity<Usuario>(usuario, httpHeaders);
         return restTemplate.exchange(rootUrl.concat("/user/persist"), HttpMethod.POST, requestEntity, UsuarioResponse.class).getBody();
+    }
+
+    @Override
+    public LoginResponse login(LoginRequest request) {
+        HttpHeaders httpHeaders = new HttpHeaders();
+        HttpEntity<LoginRequest> requestEntity = new HttpEntity<LoginRequest>(request, httpHeaders);
+        return restTemplate.exchange(rootUrl.concat("/login/validate"), HttpMethod.POST, requestEntity, LoginResponse.class).getBody();
     }
 
 }

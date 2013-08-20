@@ -7,11 +7,19 @@
     tools:context=".PanelActivity" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btClearPreferences"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="Button" />
+        android:text="@string/btClearPreferences" />
+
+    <Button
+        android:id="@+id/btOpenProvador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btClearPreferences"
+        android:layout_centerHorizontal="true"
+        android:text="@string/btOpenProvador" />
 
 </RelativeLayout>

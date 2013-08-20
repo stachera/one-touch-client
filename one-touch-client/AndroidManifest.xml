@@ -25,6 +25,10 @@
         <activity android:name="com.up.onetouch.activity.RegisterActivity_"></activity>
         <activity android:name="com.up.onetouch.activity.PanelActivity_"></activity>
         <activity android:name="com.up.onetouch.activity.LoginActivity_"></activity>
+        <activity 
+            android:name="com.up.onetouch.activity.ProvadorActivity_"
+            android:screenOrientation="portrait">            
+        </activity>
 	</application>
 
 </manifest>
