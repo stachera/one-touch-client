@@ -35,8 +35,8 @@ public final class RegisterActivity_
 
     private void afterSetContentView_() {
         txtConfirmarSenha = ((EditText) findViewById(id.txtConfirmarSenha));
-        txtLogin = ((EditText) findViewById(id.txtLogin));
         txtSenha = ((EditText) findViewById(id.txtSenha));
+        txtLogin = ((EditText) findViewById(id.txtLogin));
         {
             View view = findViewById(id.btRegisterCancel);
             if (view!= null) {

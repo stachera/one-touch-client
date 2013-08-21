@@ -37,21 +37,6 @@ public final class LoginActivity_
         txtSenha = ((EditText) findViewById(id.txtSenha));
         txtLogin = ((EditText) findViewById(id.txtLogin));
         {
-            View view = findViewById(id.btOffline);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        LoginActivity_.this.onClickOffline();
-                    }
-
-                }
-                );
-            }
-        }
-        {
             View view = findViewById(id.btLogin);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -60,6 +45,21 @@ public final class LoginActivity_
                     @Override
                     public void onClick(View view) {
                         LoginActivity_.this.onClickLogin();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = findViewById(id.btOffline);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        LoginActivity_.this.onClickOffline();
                     }
 
                 }
