@@ -15,4 +15,5 @@
     <string name="btOpenProvador">Provador Virtual</string>
     <string name="btClearPreferences">Limpar Preferências</string>
     <string name="btPgto">Pagamento</string>
+    <string name="btOffline">Offline</string>
 </resources>

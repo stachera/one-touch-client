@@ -59,4 +59,9 @@ public class LoginActivity extends AbstractActivity {
 	void onClickRegister(){
 		openActivity(RegisterActivity_.class);
 	}
+	
+	@Click(R.id.btOffline)
+	void onClickOffline(){
+		openActivityClearHistory(PanelActivity_.class);		
+	}
 }
