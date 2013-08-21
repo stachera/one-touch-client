@@ -14,4 +14,5 @@
     <string name="select_image">Selecionar Imagem</string>
     <string name="btOpenProvador">Provador Virtual</string>
     <string name="btClearPreferences">Limpar Preferências</string>
+    <string name="btPgto">Pagamento</string>
 </resources>

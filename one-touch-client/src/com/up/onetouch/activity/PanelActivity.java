@@ -22,5 +22,10 @@ public class PanelActivity extends AbstractActivity {
 	@Click(R.id.btOpenProvador)
 	void onClickOpenProvador(){
 		openActivity(ProvadorActivity_.class);
-	}	
+	}
+	
+	@Click(R.id.btPgto)
+	void onClickPgto(){
+		openActivity(PagamentoActivity.class);
+	}
 }

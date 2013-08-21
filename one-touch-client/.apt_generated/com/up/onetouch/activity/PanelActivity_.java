@@ -34,6 +34,21 @@ public final class PanelActivity_
 
     private void afterSetContentView_() {
         {
+            View view = findViewById(id.btClearPreferences);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        PanelActivity_.this.onClickClearPreferences();
+                    }
+
+                }
+                );
+            }
+        }
+        {
             View view = findViewById(id.btOpenProvador);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -49,14 +64,14 @@ public final class PanelActivity_
             }
         }
         {
-            View view = findViewById(id.btClearPreferences);
+            View view = findViewById(id.btPgto);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
 
                     @Override
                     public void onClick(View view) {
-                        PanelActivity_.this.onClickClearPreferences();
+                        PanelActivity_.this.onClickPgto();
                     }
 
                 }

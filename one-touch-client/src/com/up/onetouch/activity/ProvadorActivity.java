@@ -2,8 +2,11 @@ package com.up.onetouch.activity;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ClipData;
@@ -37,7 +40,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.app.SherlockActivity;
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EActivity;
@@ -53,7 +56,7 @@ import com.up.onetouch.utils.MultiTouch;
 @EActivity(R.layout.provador)
 @NoTitle
 @Fullscreen
-public class ProvadorActivity extends AbstractActivity {
+public class ProvadorActivity extends SherlockActivity  {
 
 	private static final int PICK_FROM_CAMERA = 1;
 	private static final int CROP_FROM_CAMERA = 2;
@@ -71,10 +74,9 @@ public class ProvadorActivity extends AbstractActivity {
 	LinearLayout catalogo;
 
 	AlertDialog dialog;
-
+	
 	@AfterViews
 	void afterViews() {
-		super.afterViews();
 		
 		final String[] items = new String[] { "Camera", "Galeria de Imagens" };
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.select_dialog_item, items);
@@ -87,10 +89,7 @@ public class ProvadorActivity extends AbstractActivity {
 				if (item == 0) {
 					Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
-					mImageCaptureUri = Uri.fromFile(new File(Environment
-							.getExternalStorageDirectory(), "tmp_avatar_"
-							+ String.valueOf(System.currentTimeMillis())
-							+ ".jpg"));
+					mImageCaptureUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), "tmp_avatar_" + String.valueOf(System.currentTimeMillis()) + ".jpg"));
 
 					intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT,mImageCaptureUri);
 
@@ -107,15 +106,13 @@ public class ProvadorActivity extends AbstractActivity {
 					intent.setType("image/*");
 					intent.setAction(Intent.ACTION_GET_CONTENT);
 
-					startActivityForResult(Intent.createChooser(intent,
-							"Complete action using"), PICK_FROM_FILE);
+					startActivityForResult(Intent.createChooser(intent, "Complete action using"), PICK_FROM_FILE);
 				}
 			}
 		});
 
-		if(dialog == null ){
-			dialog = builder.create();
-	
+		if(dialog == null){
+		
 			for (int x = 1; x < 50; x++) {
 				int resourceId = 0;
 				String imgNum = String.format("%02d", x);
@@ -124,45 +121,50 @@ public class ProvadorActivity extends AbstractActivity {
 					catalogo.addView(insertImage(resourceId));
 				}
 			}
-	
-			layoutEditor.setOnDragListener(new OnDragListener() {
-	
-				@Override
-				public boolean onDrag(View v, DragEvent event) {
-					
-					switch (event.getAction()) {	
-						case DragEvent.ACTION_DROP:
-							
-							ImageView imgView = (ImageView) event.getLocalState();						
-							ViewGroup owner = (ViewGroup) imgView.getParent();
-							owner.removeView(imgView);
-							ViewGroup owner2 = (ViewGroup) owner.getParent();
-							owner2.removeView(owner);
-							
-							layoutEditor.addView(imgView);
-							
-							imgView.setX(0);
-							imgView.setY(0);
-							
-	//						float x = event.getX() - (imgView.getWidth() / 2);
-	//						float y = event.getY() - (imgView.getHeight() / 2);
-				        	       
-							Matrix matrix = imgView.getMatrix();
-					        RectF drawableRect = new RectF(0, 0, imgView.getDrawable().getIntrinsicWidth(), imgView.getDrawable().getIntrinsicHeight());
-							RectF viewRect = new RectF(0, 0, 160, 190);
-							matrix.setRectToRect(drawableRect, viewRect, Matrix.ScaleToFit.CENTER);
-													
-							imgView.setOnTouchListener(new MultiTouch(matrix));
-							imgView.setVisibility(View.VISIBLE);
-																			
-							break;
-						default:
-							break;
-					}
-					return true;
-				}
-			});
+			
 		}
+		
+		dialog = builder.create();
+		
+		
+
+		layoutEditor.setOnDragListener(new OnDragListener() {
+
+			@Override
+			public boolean onDrag(View v, DragEvent event) {
+				
+				switch (event.getAction()) {	
+					case DragEvent.ACTION_DROP:
+						
+						ImageView imgView = (ImageView) event.getLocalState();						
+						ViewGroup owner = (ViewGroup) imgView.getParent();
+						owner.removeView(imgView);
+						ViewGroup owner2 = (ViewGroup) owner.getParent();
+						owner2.removeView(owner);
+						
+						layoutEditor.addView(imgView);
+						
+						imgView.setX(0);
+						imgView.setY(0);
+						
+//						float x = event.getX() - (imgView.getWidth() / 2);
+//						float y = event.getY() - (imgView.getHeight() / 2);
+			        	       
+						Matrix matrix = imgView.getMatrix();
+				        RectF drawableRect = new RectF(0, 0, imgView.getDrawable().getIntrinsicWidth(), imgView.getDrawable().getIntrinsicHeight());
+						RectF viewRect = new RectF(0, 0, 160, 190);
+						matrix.setRectToRect(drawableRect, viewRect, Matrix.ScaleToFit.CENTER);
+												
+						imgView.setOnTouchListener(new MultiTouch(matrix));
+						imgView.setVisibility(View.VISIBLE);
+																		
+						break;
+					default:
+						break;
+				}
+				return true;
+			}
+		});
 	}
 
 	View insertImage(int img) {
@@ -215,13 +217,7 @@ public class ProvadorActivity extends AbstractActivity {
 	void buttonCropClick() {
 		dialog.show();
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getSupportMenuInflater();
-		return true;
-	}
-
+	
 	private void doCrop() {
 		final ArrayList<CropOption> cropOptions = new ArrayList<CropOption>();
 

@@ -22,4 +22,12 @@
         android:layout_centerHorizontal="true"
         android:text="@string/btOpenProvador" />
 
+    <Button
+        android:id="@+id/btPgto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btOpenProvador"
+        android:layout_centerHorizontal="true"
+        android:text="@string/btPgto" />
+
 </RelativeLayout>

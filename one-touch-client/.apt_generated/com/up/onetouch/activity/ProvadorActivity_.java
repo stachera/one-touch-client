@@ -17,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import com.up.onetouch.R.id;
 import com.up.onetouch.R.layout;
-import com.up.onetouch.rest.RestClient_;
 
 public final class ProvadorActivity_
     extends ProvadorActivity
@@ -34,12 +33,11 @@ public final class ProvadorActivity_
     private void init_(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN, android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        restClient = new RestClient_();
     }
 
     private void afterSetContentView_() {
-        layoutEditor = ((FrameLayout) findViewById(id.editor));
         catalogo = ((LinearLayout) findViewById(id.catalogo));
+        layoutEditor = ((FrameLayout) findViewById(id.editor));
         imgSelected = ((ImageView) findViewById(id.iv_photo));
         {
             View view = findViewById(id.iv_photo);
@@ -56,7 +54,6 @@ public final class ProvadorActivity_
                 );
             }
         }
-        afterViews();
         afterViews();
     }
 
