@@ -35,23 +35,8 @@ public final class RegisterActivity_
 
     private void afterSetContentView_() {
         txtConfirmarSenha = ((EditText) findViewById(id.txtConfirmarSenha));
-        txtSenha = ((EditText) findViewById(id.txtSenha));
         txtLogin = ((EditText) findViewById(id.txtLogin));
-        {
-            View view = findViewById(id.btRegisterCancel);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        RegisterActivity_.this.onClickCancel();
-                    }
-
-                }
-                );
-            }
-        }
+        txtSenha = ((EditText) findViewById(id.txtSenha));
         {
             View view = findViewById(id.btRegisterOK);
             if (view!= null) {
@@ -61,6 +46,21 @@ public final class RegisterActivity_
                     @Override
                     public void onClick(View view) {
                         RegisterActivity_.this.onClickOK();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = findViewById(id.btRegisterCancel);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        RegisterActivity_.this.onClickCancel();
                     }
 
                 }

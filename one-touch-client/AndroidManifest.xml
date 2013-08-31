@@ -9,7 +9,9 @@
         android:targetSdkVersion="16" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    
     
     <application
         android:allowBackup="true"
@@ -26,15 +28,11 @@
         <activity android:name="com.up.onetouch.activity.RegisterActivity_"></activity>
         <activity android:name="com.up.onetouch.activity.PanelActivity_"></activity>
         <activity android:name="com.up.onetouch.activity.LoginActivity_"></activity>
-        <activity 
-            android:name="com.up.onetouch.activity.ProvadorActivity_"
+        <activity android:name="com.up.onetouch.activity.ProvadorActivity_"
             android:screenOrientation="portrait">            
         </activity>
-                <activity
-            android:name="com.up.onetouch.activity.PagamentoActivity"
-            android:screenOrientation="portrait"
-             >
-        </activity>
+        
+        <activity android:name="eu.janmuller.android.simplecropimage.CropImage" />        
 	</application>
 
 </manifest>
